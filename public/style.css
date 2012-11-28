@@ -1,0 +1,101 @@
+body {
+  background: black url(/bg.jpg) top center no-repeat;
+  font-family: Helvetica, Arial, sans-serif;
+}
+#header {
+  width: 960px;
+  margin: 40px auto 100px auto;
+  padding: 40px;
+  font-size: 200%;
+  text-align: center;
+  opacity: 0.7;
+  background-color: transparent;
+  color: black;
+}
+.box {
+  color: white;
+  background: black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+#header p, #header h1 {
+  opacity: 1.0;
+}
+#header h1 {
+  margin: 0;
+  opacity: 1.0;
+}
+#header p {
+  margin: 0;
+}
+#fileupload {
+  width: 400px;
+  margin: 40px auto 40px auto;
+  padding: 40px;
+  background-color: black;
+  opacity: 0.8;
+}
+#fileupload .btn {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #008b00;
+  opacity: 1.0;
+  position: relative;
+  width: 140px;
+  height: 25px;
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-weight: bold;
+}
+#fileupload input {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  top: -20px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 160px;
+  height: 70px;
+  cursor: pointer;
+}
+#progress {
+  position: relative;
+  display: none;
+  width: 400px;
+  height: 100px;
+  margin: 40px auto 0 auto;
+}
+#progress .bg {
+  width: 400px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000080;
+}
+#progress .bg .bar {
+  width: 0;
+  height: 10px;
+  background-color: #007fff;
+  opacity: 0.8;
+}
+#progress .message {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 400px;
+}
+#thumbs {
+  list-style: none;
+  width: 960px;
+  padding: 0;
+  margin: 40px auto;
+}

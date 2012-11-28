@@ -15,14 +15,27 @@ requirejs.config({
 });
 
 requirejs(['jquery', 'handlebars', 'jquery.iframe-transport', 'jquery.fileupload'], function ($, Handlebars) {
-  var formTemplate = Handlebars.compile($('#upload-form').html());
-  var thumbTemplate = Handlebars.compile($('#thumb').html());
-  $(document.body).append(formTemplate);
-  $('#fileupload').fileupload({
+  var thumbTemplate = Handlebars.compile($('#thumb-template').html());
+
+  $('#fileupload input').fileupload({
     dataType: 'json',
+    progressInterval: 50,
+    progressall: function (e, data) {
+      var progress = parseInt(data.loaded / data.total * 100, 10);
+      console.log(progress);
+      $('#progress .bar').css('width', progress + '%');
+    },
+    start: function (e) {
+      $('#progress .bar').css('width', '0%');
+      $('#progress').slideDown();
+    },
+    fail: function (e, data) {
+      $('#progress').slideUp();
+    },
     done: function (e, data) {
+      $('#progress').slideUp();
       $.each(data.result, function (idx, file) {
-        $('#file-list').append(thumbTemplate(file));
+        $('#thumbs').append(thumbTemplate(file));
       });
     }
   });

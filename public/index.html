@@ -3,15 +3,25 @@
   <head>
     <title>node-upload-proof</title>
     <link rel="stylesheet" href="/style.css">
-    <script id="upload-form" type="text/x-handlebars-template">
-      <input id="fileupload" type="file" name="files[]" data-url="/upload" multiple>
-      <ul id="file-list"></ul>
-    </script>
-    <script id="thumb" type="text/x-handlebars-template">
+    <script id="thumb-template" type="text/x-handlebars-template">
       <li><a href="{{s3url}}" target="_blank">{{name}}</a></li>
     </script>
   </head>
   <body>
+    <div id="header" class="box">
+      <h1>node-upload-proof</h1>
+      <p>Proof that uploads exist</p>
+    </div>
+    <div id="fileupload" class="box">
+      <div class="btn"><input type="file" name="files[]" data-url="/upload" multiple>Add image(s)</div>
+      <div id="progress">
+        <div class="bg box">
+          <div class="bar box"></div>
+        </div>
+        <div class="message">Uploading...</div>
+      </div>
+    </div>
+    <ul id="thumbs"></ul>
     <script data-main="js/main.js" src="/components/requirejs/require.js"></script>
   </body>
 </html>
