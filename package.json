@@ -1,0 +1,37 @@
+{
+  "name": "upload-proof",
+  "version": "0.0.0",
+  "description": "upload files like a boss",
+  "main": "index.js",
+  "dependencies": {
+    "formidable": "~1.0.11",
+    "s3-client": "0.0.3",
+    "middler": "~0.5.1",
+    "buffet": "~0.4.6",
+    "oil": "~0.3.7",
+    "commander": "~1.1.1",
+    "idgen": "~1.2.0",
+    "knox": "~0.4.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/carlos8f/node-upload-proof.git"
+  },
+  "homepage": "https://github.com/carlos8f/node-upload-proof",
+  "keywords": [
+    "upload",
+    "file",
+    "s3",
+    "form",
+    "stuff",
+    "bacon"
+  ],
+  "author": "Carlos Rodriguez <carlos@s8f.org> (http://s8f.org/)",
+  "license": "MIT"
+}
