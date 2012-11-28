@@ -3,8 +3,6 @@ upload-proof
 
 upload files like a boss
 
-[![build status](https://secure.travis-ci.org/carlos8f/node-upload-proof.png)](http://travis-ci.org/carlos8f/node-upload-proof)
-
 - - -
 
 ### Developed by [Terra Eclipse](http://www.terraeclipse.com)
