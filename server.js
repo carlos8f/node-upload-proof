@@ -18,6 +18,7 @@ var middler = require('middler')
 
 program.router = middler(server)
   .post('/upload', require('./lib/handleUpload'))
+  .get('/files', require('./lib/listFiles'))
   .add(buffet)
   .add(buffet.notFound)
   .on('error', function (err, req, res) {
@@ -29,3 +30,4 @@ server.listen(program.port, function () {
   console.log('server started on port ' + program.port);
 });
 program.server = server;
+program.files = {};

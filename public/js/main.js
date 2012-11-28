@@ -15,14 +15,14 @@ requirejs.config({
 });
 
 requirejs(['jquery', 'handlebars', 'jquery.iframe-transport', 'jquery.fileupload'], function ($, Handlebars) {
-  var uploadForm = Handlebars.compile($('#upload-form').html());
-  $(document.body).append(uploadForm);
+  var formTemplate = Handlebars.compile($('#upload-form').html());
+  var thumbTemplate = Handlebars.compile($('#thumb').html());
+  $(document.body).append(formTemplate);
   $('#fileupload').fileupload({
     dataType: 'json',
     done: function (e, data) {
-      console.log(data);
-      $.each(data.result, function (index, file) {
-        $('<p/>').text(file.name).appendTo(document.body);
+      $.each(data.result, function (idx, file) {
+        $('#file-list').append(thumbTemplate(file));
       });
     }
   });

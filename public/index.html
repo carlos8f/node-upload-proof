@@ -4,10 +4,11 @@
     <title>node-upload-proof</title>
     <link rel="stylesheet" href="/style.css">
     <script id="upload-form" type="text/x-handlebars-template">
-      <input id="fileupload" type="file" name="upload" data-url="/upload">
+      <input id="fileupload" type="file" name="files[]" data-url="/upload" multiple>
+      <ul id="file-list"></ul>
     </script>
     <script id="thumb" type="text/x-handlebars-template">
-      // something
+      <li><a href="{{s3url}}" target="_blank">{{name}}</a></li>
     </script>
   </head>
   <body>
