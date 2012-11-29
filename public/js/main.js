@@ -34,7 +34,7 @@ requirejs(['jquery', 'handlebars', 'oil', 'jquery.iframe-transport', 'jquery.fil
         $('#progress .bar').css('width', progress + '%');
       },
       start: function (e) {
-        $('#fileupload .btn').slideUp();
+        $('#fileupload .btn, #fileupload .or-drag').slideUp();
         $('#progress .message').text('Uploading...');
         $('#progress .bar').css('width', '0%');
         $('#progress').slideDown();
@@ -42,7 +42,7 @@ requirejs(['jquery', 'handlebars', 'oil', 'jquery.iframe-transport', 'jquery.fil
       fail: function (e, data) {
         $('#progress .message').text('Failed :(');
         setTimeout(function () {
-          $('#fileupload .btn').slideDown();
+          $('#fileupload .btn, #fileupload .or-drag').slideDown();
           $('#progress').slideUp();
         }, 2000);
       },
@@ -50,7 +50,7 @@ requirejs(['jquery', 'handlebars', 'oil', 'jquery.iframe-transport', 'jquery.fil
         refreshThumbs(data.result);
         $('#progress .message').text('Done!');
         setTimeout(function () {
-          $('#fileupload .btn').slideDown();
+          $('#fileupload .btn, #fileupload .or-drag').slideDown();
           $('#progress').slideUp();
         }, 2000);
       }
