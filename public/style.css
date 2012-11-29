@@ -4,7 +4,7 @@ body {
 }
 #header {
   width: 960px;
-  margin: 40px auto 100px auto;
+  margin: 40px auto;
   padding: 40px;
   font-size: 200%;
   text-align: center;
@@ -31,7 +31,7 @@ body {
 }
 #fileupload {
   width: 400px;
-  margin: 40px auto 40px auto;
+  margin: 0 auto 40px auto;
   padding: 40px;
   background-color: black;
   opacity: 0.8;
@@ -98,4 +98,13 @@ body {
   width: 960px;
   padding: 0;
   margin: 40px auto;
+}
+#thumbs a {
+  text-decoration: none;
+  display: block;
+  float: left;
+  margin: 25px;
+}
+#thumbs img {
+  border: none;
 }

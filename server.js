@@ -14,20 +14,25 @@ var program = module.exports = require('commander')
 
 var middler = require('middler')
   , buffet = require('buffet')()
-  , server = require('http').createServer()
+  , server = program.server = require('http').createServer()
 
 program.router = middler(server)
+  .add(function (req, res, next) {
+    console.log(req.method, req.url);
+    next();
+  })
   .post('/upload', require('./lib/handleUpload'))
   .get('/files', require('./lib/listFiles'))
   .add(buffet)
-  .add(buffet.notFound)
   .on('error', function (err, req, res) {
     res.writeHead(500, {'Content-Type': 'text/plain'});
     res.end('Oops! error: ' + err);
   });
 
+program.io = require('oil').attach(server);
+
+program.router.add(buffet.notFound);
+
 server.listen(program.port, function () {
   console.log('server started on port ' + program.port);
 });
-program.server = server;
-program.files = {};
