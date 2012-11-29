@@ -5,14 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "formidable": "~1.0.11",
-    "s3-client": "0.0.3",
     "middler": "~0.5.1",
     "buffet": "~0.4.6",
     "oil": "~0.3.7",
     "commander": "~1.1.1",
     "idgen": "~1.2.0",
     "knox": "~0.4.2",
-    "imagemagick": "~0.1.3",
+    "imagemagick": "git+https://github.com/rsms/node-imagemagick.git",
     "async": "~0.1.22",
     "redis": "~0.8.2",
     "hydration": "~0.3.1"
