@@ -95,7 +95,7 @@ body {
 }
 #thumbs {
   list-style: none;
-  width: 960px;
+  width: 70%;
   padding: 0;
   margin: 40px auto;
 }
@@ -103,8 +103,13 @@ body {
   text-decoration: none;
   display: block;
   float: left;
-  margin: 25px;
+  margin: 10px;
+  width: 150px;
+  height: 150px;
 }
 #thumbs img {
   border: none;
+}
+h2 {
+  text-align: center;
 }

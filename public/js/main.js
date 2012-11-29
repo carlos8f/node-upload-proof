@@ -45,9 +45,7 @@ requirejs(['jquery', 'handlebars', 'oil', 'jquery.iframe-transport', 'jquery.fil
         }, 2000);
       },
       done: function (e, data) {
-        $.each(data.result, function (idx, file) {
-          $('#thumbs').append(thumbTemplate(file));
-        });
+        refreshThumbs(data.result);
         $('#progress .message').text('Done!');
         setTimeout(function () {
           $('#progress').slideUp();
@@ -62,4 +60,13 @@ requirejs(['jquery', 'handlebars', 'oil', 'jquery.iframe-transport', 'jquery.fil
       .css('background-color', '#93de32')
       .css('width', progress.percent + '%');
   });
+
+  $.getJSON('/files', refreshThumbs);
+
+  function refreshThumbs (files) {
+    $('#thumbs').empty();
+    $.each(files, function (idx, file) {
+      $('#thumbs').append(thumbTemplate(file));
+    });
+  }
 });

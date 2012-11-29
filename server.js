@@ -3,6 +3,8 @@ var program = module.exports = require('commander')
   .option('--key <key>', 's3 key')
   .option('--secret <secret>', 's3 secret')
   .option('--bucket <bucket>', 's3 bucket')
+  .option('--redisHost <host>', 'redis host (default: 127.0.0.1)', String, '127.0.0.1')
+  .option('--redisPort <port>', 'redis port (default: 6379)', Number, 6379)
   .parse(process.argv)
 
 ;['key', 'secret', 'bucket'].forEach(function (k) {
@@ -11,6 +13,8 @@ var program = module.exports = require('commander')
     process.exit(1);
   }
 });
+
+program.redis = require('redis').createClient(program.redisPort, program.redisHost);
 
 var middler = require('middler')
   , buffet = require('buffet')()
