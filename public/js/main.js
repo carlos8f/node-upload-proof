@@ -71,5 +71,31 @@ requirejs(['jquery', 'handlebars', 'oil', 'jquery.iframe-transport', 'jquery.fil
     $.each(files, function (idx, file) {
       $('#thumbs').append(thumbTemplate(file));
     });
+
+    $('#thumbs li')
+      .mouseover(function () {
+        $(this).find('.delete').show();
+      })
+      .mouseout(function () {
+        $(this).find('.delete').hide();
+      });
+
+    $('#thumbs .delete').click(function (e) {
+      if (confirm('are you sure?')) {
+        $.ajax({
+          type: 'POST',
+          url: '/delete',
+          data: {
+            id: $(this).attr('href').replace(/^#delete\//, '')
+          },
+          success: function () {
+            $.getJSON('/files', refreshThumbs);
+          }
+        })
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
   }
 });

@@ -4,7 +4,8 @@
     <title>node-upload-proof</title>
     <link rel="stylesheet" href="/style.css">
     <script id="thumb-template" type="text/x-handlebars-template">
-      <li><a href="{{s3url}}" target="_blank"><img src="{{thumb.s3url}}" alt="{{name}}"></a></li>
+      <li><a class="thumb" href="{{s3url}}" target="_blank"><img src="{{thumb.s3url}}" alt="{{name}}"></a>
+      <a href="#delete/{{id}}" class="delete">delete</a></li>
     </script>
   </head>
   <body>
@@ -13,7 +14,7 @@
       <p>Proof that uploads exist</p>
     </div>
     <div id="fileupload" class="box">
-      <div class="btn"><input type="file" name="files[]" data-url="/upload" multiple>Add image(s)</div>
+      <div class="btn"><input type="file" name="file" data-url="/upload">Add image(s)</div>
       <div id="progress">
         <div class="bg box">
           <div class="bar box"></div>

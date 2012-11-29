@@ -99,16 +99,40 @@ body {
   padding: 0;
   margin: 40px auto;
 }
-#thumbs a {
+#thumbs li {
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin: 10px;
+}
+#thumbs .thumb {
   text-decoration: none;
   display: block;
-  float: left;
-  margin: 10px;
   width: 150px;
   height: 150px;
+  background-color: black;
 }
 #thumbs img {
   border: none;
+}
+#thumbs .delete {
+  position: absolute;
+  z-index: 1;
+  height: 40px;
+  line-height: 40px;
+  width: 150px;
+  top: 150px;
+  left: 0;
+  text-decoration: none;
+  display: none;
+  text-align: center;
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+}
+#thumbs .delete:hover {
+  background-color: #cd0000;
 }
 h2 {
   text-align: center;

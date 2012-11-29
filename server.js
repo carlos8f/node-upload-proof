@@ -27,6 +27,7 @@ program.router = middler(server)
   })
   .post('/upload', require('./lib/handleUpload'))
   .get('/files', require('./lib/listFiles'))
+  .post('/delete', require('./lib/delete'))
   .add(buffet)
   .on('error', function (err, req, res) {
     res.writeHead(500, {'Content-Type': 'text/plain'});
